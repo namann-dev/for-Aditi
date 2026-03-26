@@ -15,30 +15,9 @@
         }
 
         * { box-sizing: border-box; }
+        body { margin: 0; padding: 0; background-color: var(--cream); font-family: 'Montserrat', sans-serif; color: #333; overflow-x: hidden; scroll-behavior: smooth; }
 
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--cream);
-            font-family: 'Montserrat', sans-serif;
-            color: #333;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-
-        /* --- Animations --- */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        @keyframes floatUp {
-            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
-        }
-
-        /* --- Hero Section --- */
+        /* --- Hero Section with Background Photo --- */
         .hero {
             height: 100vh;
             display: flex;
@@ -46,9 +25,10 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(rgba(255,253,245,0.85), rgba(255,253,245,0.85)), 
-                        url('https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?auto=format&fit=crop&w=1500'); 
+            background: linear-gradient(rgba(255,253,245,0.7), rgba(255,253,245,0.7)), 
+                        url('hero-aditi.jpg'); 
             background-size: cover;
+            background-position: center;
             border-bottom: 8px solid var(--crimson);
             position: relative;
         }
@@ -59,165 +39,88 @@
             color: var(--crimson);
             margin: 0;
             padding: 0 20px;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
         }
 
-        .hero p {
-            font-style: italic;
-            font-size: 1.2rem;
-            color: var(--rose-gold);
-            margin-top: 15px;
-        }
-
-        /* --- Main Layout --- */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 80px 20px;
-        }
+        /* --- Layout --- */
+        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
 
         .section {
             display: flex;
             align-items: center;
-            margin-bottom: 120px;
-            gap: 50px;
+            margin-bottom: 100px;
+            gap: 40px;
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease-out;
         }
 
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        .section.visible { opacity: 1; transform: translateY(0); }
         .section.reverse { flex-direction: row-reverse; }
 
         @media (max-width: 768px) {
             .section, .section.reverse { flex-direction: column; text-align: center; }
         }
 
-        /* --- Photo Frames (Polaroids) --- */
-        .photo-container {
-            flex: 1;
-        }
-
+        /* --- Polaroid Styling --- */
         .polaroid {
             background: white;
-            padding: 15px 15px 60px 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            transform: rotate(-3deg);
-            transition: 0.5s ease;
+            padding: 15px 15px 50px 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transform: rotate(-2deg);
             width: 100%;
-            max-width: 380px;
-            margin: 0 auto;
+            max-width: 350px;
+            transition: 0.4s;
         }
+        .section.reverse .polaroid { transform: rotate(2deg); }
+        .polaroid:hover { transform: rotate(0deg) scale(1.03); }
+        .polaroid img { width: 100%; height: 300px; object-fit: cover; background: #eee; }
 
-        .polaroid img {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            background: #fdfdfd;
-        }
-
-        .section.reverse .polaroid { transform: rotate(3deg); }
-        .polaroid:hover { transform: rotate(0deg) scale(1.05); }
-
-        /* --- Message Content (Your Written Text) --- */
+        /* --- Message Content --- */
         .content-area { flex: 1.5; }
-
-        .content-area h2 {
-            font-family: 'Playfair Display', serif;
-            color: var(--deep-red);
-            font-size: 2rem;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
         .my-message {
             font-size: 1.1rem;
             line-height: 1.8;
-            color: #444;
             background: white;
-            padding: 30px;
-            border-radius: 25px;
+            padding: 25px;
+            border-radius: 20px;
             border-left: 5px solid var(--crimson);
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            white-space: pre-wrap; /* Maintains your line breaks */
+            white-space: pre-wrap;
         }
 
-        /* --- Aditi's Specialized Panel (For her to write) --- */
+        /* --- Aditi's Panel --- */
         .aditi-panel {
             background: var(--crimson);
-            padding: 60px 40px;
-            border-radius: 40px;
+            padding: 50px 30px;
+            border-radius: 30px;
             color: white;
-            margin-top: 50px;
-            box-shadow: 0 25px 50px rgba(220, 20, 60, 0.4);
             text-align: center;
+            box-shadow: 0 20px 40px rgba(220, 20, 60, 0.3);
         }
-
-        .aditi-panel h2 { color: white; font-family: 'Playfair Display', serif; font-size: 2.2rem; }
-
         #aditiTextarea {
-            width: 100%;
-            min-height: 200px;
-            margin-top: 30px;
+            width: 100%; min-height: 180px; margin-top: 20px;
             background: rgba(255, 255, 255, 0.15);
             border: 2px dashed rgba(255, 255, 255, 0.4);
-            border-radius: 20px;
-            color: white;
-            padding: 20px;
-            font-size: 1.1rem;
-            font-family: 'Montserrat', sans-serif;
-            resize: none;
+            border-radius: 15px; color: white; padding: 15px;
+            font-family: inherit; font-size: 1rem; resize: none;
         }
-
-        #aditiTextarea:focus {
-            outline: none;
-            background: rgba(255, 255, 255, 0.2);
-            border-color: white;
-        }
-
         .btn-submit {
-            background: white;
-            color: var(--crimson);
-            border: none;
-            padding: 18px 45px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            cursor: pointer;
-            margin-top: 30px;
-            transition: 0.3s;
+            background: white; color: var(--crimson); border: none;
+            padding: 15px 40px; border-radius: 50px; font-weight: 600;
+            margin-top: 25px; cursor: pointer; transition: 0.3s;
         }
 
-        .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-
-        /* --- Visual Particles --- */
-        .heart-particle {
-            position: fixed;
-            pointer-events: none;
-            z-index: 1000;
-            animation: floatUp 3s linear forwards;
-        }
-
-        footer {
-            text-align: center;
-            padding: 60px 0;
-            background: var(--blush);
-            margin-top: 100px;
-            font-weight: 300;
-        }
+        .heart-particle { position: fixed; pointer-events: none; animation: floatUp 3s linear forwards; }
+        @keyframes floatUp { 0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(-100vh); opacity: 0; } }
     </style>
 </head>
 <body>
 
     <header class="hero">
-        <div style="font-size: 3.5rem; animation: pulse 2s infinite;">❤️</div>
+        <div style="font-size: 3rem; margin-bottom: 10px;">❤️</div>
         <h1>How to keep Mrs. Aditi Ayaskanti Chitraansh Happy?</h1>
-        <p>A personal space created for the only one who matters.</p>
+        <p>A digital promise from my heart to yours.</p>
     </header>
 
     <div class="container">
@@ -225,124 +128,112 @@
         <div class="section">
             <div class="photo-container">
                 <div class="polaroid">
-                    <img src="your-photo-1.jpg" alt="Photo of Aditi">
-                    <p style="text-align:center; font-family: 'Playfair Display'; margin-top: 10px; color: var(--rose-gold);">Pure Joy</p>
+                    <img src="photo-1.jpeg" alt="Memory 1">
+                    <p style="text-align:center; font-style:italic; color: var(--rose-gold);">Thinking of You</p>
                 </div>
             </div>
             <div class="content-area">
-                <h2>Why You Matter ❤️</h2>
-                <div class="my-message">
-[PLACE YOUR HEARTFELT MESSAGE HERE]
-(Example: Aditi, your smile is the reason I strive to be better. 
-You deserve the world, and I'm here to give it to you...)
-                </div>
+                <h2>For the Love Of My Life💍✨❤️</h2>
+                <div class="my-message">Writing this message for the girl who means the most to me💖💖....who has seen me at the lowest position of life and still idk how liked that version....the lady luck who has brought happiness in my life🧿🧿 ....still cant forget when i saw u face to face after getting close to you...how my heart melted🫠🫠🫠🫠..... that outfit of urs is still something engraved in my mind without any photo ....the person who chose a dumbass like me in a Long distance Relationship...while having better options nearby..Chalo now go to the next pane wha bhi likhna h mujhee 😅😅</div>
             </div>
         </div>
 
         <div class="section reverse">
             <div class="photo-container">
                 <div class="polaroid">
-                    <img src="your-photo-2.jpg" alt="A shared memory">
-                    <p style="text-align:center; font-family: 'Playfair Display'; margin-top: 10px; color: var(--rose-gold);">Our Moments</p>
+                    <img src="photo-2.jpeg" alt="Memory 2">
+                    <p style="text-align:center; font-style:italic; color: var(--rose-gold);">Our Smiles</p>
                 </div>
             </div>
             <div class="content-area">
                 <h2>My Promise to You ❤️</h2>
-                <div class="my-message">
-[PLACE YOUR COMMITMENT TEXT HERE]
-(Example: I promise to listen, to cherish our small moments, 
-and to never let a day go by without making you feel loved...)
+                <div class="my-message">Its been more than 2 months of togethernesss💖💖....idk how but my ladyy u have successfully managed with this dumbass for more than 70 days😅😅🫡🫡🫡.......but as you remember on 12th January,2026 Monday 4:43PM you signed up a permanent lifetime bond with me....and despite the misunderstanding ,the sadness,and the anger would be temperoary...but us being together would be permanent.....  </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="photo-container">
+                <div class="polaroid">
+                    <img src="photo-3.jpeg" alt="Memory 3">
+                    <p style="text-align:center; font-style:italic; color: var(--rose-gold);">Forever Moments</p>
                 </div>
+            </div>
+            <div class="content-area">
+                <h2>In Your Eyes ❤️</h2>
+                <div class="my-message">This was kept for something else ...rn it is 26th March 2026,the 73rd day of our relationship..... me being as the stupid individual i am have made u really upset by some words which shuldnt have been said ..and obviously never on texts....see its first time for both of in LDR and just think abt me for a sec an idiotic who knows nothing , has never recieved loved unconditionally,has been blessed by a soul like you...ek toh you are so damn gorgeous..it just makes me feel a bit insecure ....its not that i do not trust you its just that ik that u are too naive for this generation and surely do not know the differnce between friendly and flirty thats why i fear someone would snatch you away from me ..at the time of writing this i just told  u abt this ....and u staright away declined my surprise...ik u didnt mean to make me upset or anything its just that u are mad at me which makes u say these words....and uk how stubborn i am ...now toh i will make this even more motivation🔥😁😅😇</div>
+            </div>
+        </div>
+
+        <div class="section reverse">
+            <div class="photo-container">
+                <div class="polaroid">
+                    <img src="photo-4.jpeg" alt="Memory 4">
+                    <p style="text-align:center; font-style:italic; color: var(--rose-gold);">Our Future</p>
+                </div>
+            </div>
+            <div class="content-area">
+                <h2>Our Journey Ahead ❤️</h2>
+                <div class="my-message">From "My Favourite Sardardd" To "Rasgulla" to "Wifeyyy" i have called u with many nicknames just want the right to be with u long ahead so the variety and count on these nicknames ......just promise me togetherness,promise me that i will always belong to you,and I promise you to be For u ,By you and Besides you in each and every situation and each and every aspect of life, ik i have not turned out to be the best boyfriend ,in fact i dooubt to clear the cutoff of a good boyfriend too,but dw love i am learning ..teach me how to love you and  i promise to exactly mold myself into the ways u want me too...Always yours forver and ever💖🧿🧿🧿🧿🧿</div>
             </div>
         </div>
 
         <div class="aditi-panel" id="inputPanel">
             <h2>Aditi's Turn ❤️</h2>
-            <p>"Tell me, Aditi... what are the little or big things I can do to make your heart truly happy today and every day?"</p>
-            <textarea id="aditiTextarea" placeholder="Write to me, Aditi... I am listening with all my heart."></textarea>
-            <button class="btn-submit" onclick="sendToBackend()">Send My Happiness Guide</button>
+            <p>"Aap hi btaa do madam ji aapko khush kese rkhaa jaaye ...aapka Hubby thoda gadha hai😅😅."</p>
+            <textarea id="aditiTextarea" placeholder="Write to me, Wifeyyyyy... I am listening."></textarea>
+            <button class="btn-submit" onclick="sendResponse()">Send this dumboo some tips on how to keep u happyyyyy</button>
         </div>
 
     </div>
 
-    <footer>
-        <p>System Status: 100% Devoted | Created with Infinite Love</p>
-    </footer>
-
     <script>
-        // --- Backend Connection (Replace with your Formspree ID) ---
+        // REPLACE WITH YOUR FORMSPREE ID
         const FORM_URL = "https://formspree.io/f/xqegazak";
 
-        // Scroll Animation
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
         }, { threshold: 0.1 });
-        document.querySelectorAll('.section').forEach(section => observer.observe(section));
+        document.querySelectorAll('.section').forEach(s => observer.observe(s));
 
-        // Heart Particles
-        function createHearts(count) {
-            for(let i=0; i<count; i++) {
-                setTimeout(() => {
-                    const heart = document.createElement('div');
-                    heart.className = 'heart-particle';
-                    heart.innerHTML = '❤️';
-                    heart.style.left = Math.random() * 100 + 'vw';
-                    heart.style.top = '100vh';
-                    heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
-                    document.body.appendChild(heart);
-                    setTimeout(() => heart.remove(), 3000);
-                }, i * 150);
-            }
-        }
-
-        // Logic for her input
-        async function sendToBackend() {
-            const aditiMessage = document.getElementById('aditiTextarea').value;
+        async function sendResponse() {
+            const msg = document.getElementById('aditiTextarea').value;
             const panel = document.getElementById('inputPanel');
+            if(!msg.trim()) return alert("Aditi, please share your heart.");
 
-            if(!aditiMessage.trim()) {
-                alert("Please share your thoughts, Aditi. Your happiness is my mission.");
-                return;
-            }
-
-            panel.innerHTML = "<h2>Sending your happiness guide to my soul... ❤️</h2>";
-            createHearts(40);
-
+            panel.innerHTML = "<h2>Rukkooo Lemme take the notes ❤️.....</h2>";
+            
             try {
                 await fetch(FORM_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: aditiMessage, user: "Aditi" })
+                    body: JSON.stringify({ message: msg })
                 });
-
-                panel.innerHTML = `
-                    <div style="padding: 20px;">
-                        <h2 style="color:white;">Received! ❤️</h2>
-                        <p>Thank you for letting me in, Aditi. Every word you wrote is now a priority for me.</p>
-                    </div>
-                `;
-            } catch (error) {
-                panel.innerHTML = "<h2>Saved to My Heart! ❤️</h2><p>I will read this and cherish it forever.</p>";
+                panel.innerHTML = "<h2>Notedd Love!📝 ❤️</h2><p>I promise to love you till the last drop of love beholds in me.</p>";
+                for(let i=0; i<30; i++) spawnHeart();
+            } catch (e) {
+                panel.innerHTML = "<h2>Saved! ❤️</h2>";
             }
         }
 
-        // Click for hearts
+        function spawnHeart() {
+            const h = document.createElement('div');
+            h.className = 'heart-particle';
+            h.innerHTML = '❤️';
+            h.style.left = Math.random() * 100 + 'vw';
+            h.style.top = '100vh';
+            h.style.fontSize = (Math.random() * 20 + 20) + 'px';
+            document.body.appendChild(h);
+            setTimeout(() => h.remove(), 3000);
+        }
+
         document.addEventListener('click', (e) => {
             const h = document.createElement('span');
             h.innerHTML = '❤️';
-            h.style.position = 'fixed';
-            h.style.left = e.clientX + 'px';
-            h.style.top = e.clientY + 'px';
-            h.style.transition = '1.5s';
-            h.style.pointerEvents = 'none';
+            h.style.position = 'fixed'; h.style.left = e.clientX + 'px'; h.style.top = e.clientY + 'px';
+            h.style.transition = '1s'; h.style.pointerEvents = 'none';
             document.body.appendChild(h);
-            setTimeout(() => {
-                h.style.transform = 'translateY(-80px) scale(2)';
-                h.style.opacity = '0';
-            }, 10);
-            setTimeout(() => h.remove(), 1500);
+            setTimeout(() => { h.style.transform = 'translateY(-50px)'; h.style.opacity = '0'; }, 10);
+            setTimeout(() => h.remove(), 1000);
         });
     </script>
 </body>
