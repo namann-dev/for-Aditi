@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to keep Mrs. Aditi Ayaskanti Chitraansh Happy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --crimson: #DC143C;
+            --rose-gold: #B76E79;
+            --cream: #FFFDF5;
+            --blush: #F8E0E6;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--cream);
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(255,253,245,0.8), rgba(255,253,245,0.8)), 
+                        url('https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?q=80&w=1000&auto=format&fit=crop'); /* Placeholder romantic bg */
+            background-size: cover;
+            border-bottom: 5px solid var(--crimson);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--crimson);
+            margin-bottom: 10px;
+            padding: 0 20px;
+        }
+
+        .subtitle {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--rose-gold);
+        }
+
+        /* Layout Sections */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 150px;
+            gap: 50px;
+        }
+
+        .section.reverse {
+            flex-direction: row-reverse;
+        }
+
+        /* Photo Placeholders */
+        .photo-frame {
+            flex: 1;
+            background: white;
+            padding: 15px 15px 50px 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: rotate(-3deg);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #eee;
+        }
+
+        .photo-frame:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ccc;
+            font-size: 0.8rem;
+            text-align: center;
+            border: 1px dashed #ccc;
+        }
+
+        /* Input Areas */
+        .text-area {
+            flex: 1.2;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--crimson);
+            font-size: 2rem;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            background: transparent;
+            border: 2px solid var(--blush);
+            border-radius: 15px;
+            padding: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            resize: none;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--crimson);
+            background: white;
+            box-shadow: 0 0 15px rgba(220, 20, 60, 0.1);
+        }
+
+        /* Heart Animations */
+        .floating-heart {
+            position: fixed;
+            color: var(--crimson);
+            font-size: 20px;
+            pointer-events: none;
+            z-index: 999;
+            animation: floatUp 3s linear forwards;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+        }
+
+        .heart-icon {
+            display: inline-block;
+            color: var(--crimson);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .btn-convince {
+            background: var(--crimson);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Playfair Display', serif;
+            transition: transform 0.3s;
+            margin-top: 50px;
+        }
+
+        .btn-convince:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(220, 20, 60, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 100px 0;
+            background: var(--blush);
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="heart-icon" style="font-size: 3rem;">❤️</div>
+        <h1>How to keep Mrs. Aditi Ayaskanti Chitraansh Happy?</h1>
+        <p class="subtitle">A living promise from my heart to yours.</p>
+    </section>
+
+    <div class="container">
+        
+        <div class="section">
+            <div class="photo-frame">
+                <div class="photo-placeholder">Click to add her favorite photo</div>
+            </div>
+            <div class="text-area">
+                <h2>Why You Matter <span class="heart-icon">❤️</span></h2>
+                <textarea placeholder="Aditi, start typing here... Tell her why she is irreplaceable."></textarea>
+            </div>
+        </div>
+
+        <div class="section reverse">
+            <div class="photo-frame" style="transform: rotate(3deg);">
+                <div class="photo-placeholder">Add a memory of us here</div>
+            </div>
+            <div class="text-area">
+                <h2>My Daily Efforts <span class="heart-icon">❤️</span></h2>
+                <textarea placeholder="List the things you will do every day to see her smile..."></textarea>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="photo-frame">
+                <div class="photo-placeholder">A photo for our future</div>
+            </div>
+            <div class="text-area">
+                <h2>Our Shared Future <span class="heart-icon">❤️</span></h2>
+                <textarea placeholder="Describe the life you want to build with her..."></textarea>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <button class="btn-convince" onclick="celebrate()">Click if you're convinced, Aditi ❤️</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Created with infinite love | System Status: Always Yours</p>
+    </footer>
+
+    <script>
+        // Heart Animation System
+        function celebrate() {
+            for(let i=0; i<50; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'floating-heart';
+                    heart.innerHTML = '❤️';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.top = '100vh';
+                    heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+                    document.body.appendChild(heart);
+                    
+                    setTimeout(() => heart.remove(), 3000);
+                }, i * 100);
+            }
+            alert("I promise to keep you happy forever, Aditi.");
+        }
+
+        // Create random hearts on click
+        document.addEventListener('click', (e) => {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤️';
+            heart.style.position = 'fixed';
+            heart.style.left = e.clientX + 'px';
+            heart.style.top = e.clientY + 'px';
+            heart.style.pointerEvents = 'none';
+            heart.style.color = 'red';
+            heart.style.transition = 'all 1s ease';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.style.transform = 'translateY(-50px)';
+                heart.style.opacity = '0';
+            }, 10);
+            setTimeout(() => heart.remove(), 1000);
+        });
+    </script>
+</body>
+</html>
