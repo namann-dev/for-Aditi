@@ -17,7 +17,7 @@
         * { box-sizing: border-box; }
         body { margin: 0; padding: 0; background-color: var(--cream); font-family: 'Montserrat', sans-serif; color: #333; overflow-x: hidden; scroll-behavior: smooth; }
 
-        /* --- Hero Section with Background Photo --- */
+        /* --- Hero Section --- */
         .hero {
             height: 100vh;
             display: flex;
@@ -25,12 +25,10 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(rgba(255,253,245,0.7), rgba(255,253,245,0.7)), 
-                        url('hero-aditi.jpg'); 
-            background-size: cover;
-            background-position: center;
             border-bottom: 8px solid var(--crimson);
             position: relative;
+            background-size: cover;
+            background-position: center;
         }
 
         .hero h1 {
@@ -117,7 +115,7 @@
 </head>
 <body>
 
-    <header class="hero">
+    <header class="hero" style="background-image: linear-gradient(rgba(255,253,245,0.7), rgba(255,253,245,0.7)), url('hero-aditi.jpg');">
         <div style="font-size: 3rem; margin-bottom: 10px;">❤️</div>
         <h1>How to keep Mrs. Aditi Ayaskanti Chitraansh Happy?</h1>
         <p>A digital promise from my heart to yours.</p>
@@ -155,12 +153,12 @@
             <div class="photo-container">
                 <div class="polaroid">
                     <img src="photo-3.jpeg" alt="Memory 3">
-                    <p style="text-align:center; font-style:italic; color: var(--rose-gold);">Forever Moments</p>
+                   <p style="text-align:center; font-style:italic; color: var(--rose-gold);">Forever Moments</p>
                 </div>
             </div>
             <div class="content-area">
                 <h2>In Your Eyes ❤️</h2>
-                <div class="my-message">This was kept for something else ...rn it is 26th March 2026,the 73rd day of our relationship..... me being as the stupid individual i am have made u really upset by some words which shuldnt have been said ..and obviously never on texts....see its first time for both of in LDR and just think abt me for a sec an idiotic who knows nothing , has never recieved loved unconditionally,has been blessed by a soul like you...ek toh you are so damn gorgeous..it just makes me feel a bit insecure ....its not that i do not trust you its just that ik that u are too naive for this generation and surely do not know the differnce between friendly and flirty thats why i fear someone would snatch you away from me ..at the time of writing this i just told  u abt this ....and u staright away declined my surprise...ik u didnt mean to make me upset or anything its just that u are mad at me which makes u say these words....and uk how stubborn i am ...now toh i will make this even more motivation🔥😁😅😇</div>
+                <div class="my-message">YHAAA ESAAGE BAAKI HAIIIII</div>
             </div>
         </div>
 
@@ -173,12 +171,12 @@
             </div>
             <div class="content-area">
                 <h2>Our Journey Ahead ❤️</h2>
-                <div class="my-message">From "My Favourite Sardardd" To "Rasgulla" to "Wifeyyy" i have called u with many nicknames just want the right to be with u long ahead so the variety and count on these nicknames ......just promise me togetherness,promise me that i will always belong to you,and I promise you to be For u ,By you and Besides you in each and every situation and each and every aspect of life, ik i have not turned out to be the best boyfriend ,in fact i dooubt to clear the cutoff of a good boyfriend too,but dw love i am learning ..teach me how to love you and  i promise to exactly mold myself into the ways u want me too...Always yours forver and ever💖🧿🧿🧿🧿🧿</div>
+                <div class="my-message">From "My Favourite Sardardd" To "Rasgulla" to "Wifeyyyyy" i have called u with many nicknames just want the right to be with u long ahead so the variety and count on these nicknames to keep on increasing ......just promise me togetherness,promise me that i will always belong to you,and I promise you to be For u ,By you and Besides you in each and every situation and each and every aspect of life, ik i have not turned out to be the best boyfriend ,in fact i doubt to clear the cutoff of a good boyfriend too,but dw love i am learning ..teach me how to love you and  i promise to exactly mold myself into the ways u want me too...Always yours forver and ever💖🧿🧿🧿🧿🧿</div>
             </div>
         </div>
 
         <div class="aditi-panel" id="inputPanel">
-            <h2>Aditi's Turn ❤️</h2>
+            <h2>Your turn Cupcake🧁❤️</h2>
             <p>"Aap hi btaa do madam ji aapko khush kese rkhaa jaaye ...aapka Hubby thoda gadha hai😅😅."</p>
             <textarea id="aditiTextarea" placeholder="Write to me, Wifeyyyyy... I am listening."></textarea>
             <button class="btn-submit" onclick="sendResponse()">Send this dumboo some tips on how to keep u happyyyyy</button>
@@ -187,7 +185,6 @@
     </div>
 
     <script>
-        // REPLACE WITH YOUR FORMSPREE ID
         const FORM_URL = "https://formspree.io/f/xqegazak";
 
         const observer = new IntersectionObserver((entries) => {
