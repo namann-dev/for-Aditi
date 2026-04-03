@@ -7,28 +7,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root { --crimson: #DC143C; --rose-gold: #B76E79; --cream: #FFFDF5; }
-        body { margin: 0;
-              padding: 0; 
-              background-color: var(--cream); 
-              font-family: 'Montserrat', sans-serif;
-              color: #333; overflow-x: hidden; scroll-behavior: smooth; }
-        .hero { height: 100vh; display: flex; 
-               flex-direction: column; justify-content: center; align-items: center;
-               text-align: center; border-bottom: 8px solid var(--crimson); }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 8vw, 3.5rem); color: var(--crimson); }
+        body { margin: 0; padding: 0; background-color: var(--cream); font-family: 'Montserrat', sans-serif; color: #333; overflow-x: hidden; scroll-behavior: smooth; }
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-bottom: 8px solid var(--crimson); }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 8vw, 3.5rem); color: var(--crimson); padding: 0 15px; }
         .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
         .section { display: flex; align-items: center; margin-bottom: 100px; gap: 40px; opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .section.visible { opacity: 1; transform: translateY(0); }
         .section.reverse { flex-direction: row-reverse; }
         .polaroid { background: white; padding: 15px 15px 50px 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 100%; max-width: 350px; }
         .polaroid img { width: 100%; height: 300px; object-fit: cover; background: #eee; }
-        .my-message { font-size: 1.1rem; line-height: 1.8; background: white; padding: 25px; border-radius: 20px; border-left: 5px solid var(--crimson); white-space: pre-wrap; }
-        .aditi-panel { background: var(--crimson); padding: 50px 30px; border-radius: 30px; color: white; text-align: center; }
-        #aditiTextarea { width: 100%; min-height: 180px; margin-top: 20px; background: rgba(255, 255, 255, 0.15); border: 2px dashed white; border-radius: 15px; color: white; padding: 15px; }
-        .btn-submit { background: white; color: var(--crimson); border: none; padding: 15px 40px; border-radius: 50px; cursor: pointer; margin-top: 25px; }
+        .my-message { flex: 1; font-size: 1.1rem; line-height: 1.8; background: white; padding: 25px; border-radius: 20px; border-left: 5px solid var(--crimson); white-space: pre-wrap; }
+        .aditi-panel { background: var(--crimson); padding: 50px 30px; border-radius: 30px; color: white; text-align: center; margin-top: 50px; }
+        #aditiTextarea { width: 100%; min-height: 150px; margin-top: 20px; background: rgba(255, 255, 255, 0.15); border: 2px dashed white; border-radius: 15px; color: white; padding: 15px; font-family: inherit; box-sizing: border-box; }
+        .btn-submit { background: white; color: var(--crimson); border: none; padding: 15px 40px; border-radius: 50px; cursor: pointer; margin-top: 25px; font-weight: 600; transition: 0.3s; }
+        .btn-submit:hover { transform: scale(1.05); background: var(--cream); }
+        @media (max-width: 768px) { .section, .section.reverse { flex-direction: column; text-align: center; } .my-message { border-left: none; border-top: 5px solid var(--crimson); } }
     </style>
 </head>
 <body>
+
     <header class="hero">
         <div style="font-size: 3rem;">❤️</div>
         <h1>How to keep Mrs. Aditi Ayaskanti Chitraansh Happy?</h1>
@@ -40,11 +37,7 @@
                 <img src="aditi1.jpeg" alt="Memory 1">
                 <p style="text-align:center; font-style:italic;">Thinking of You</p>
             </div>
-            <div class="my-message">Writing this message for the girl who means the most to me💖💖....who has seen me at the lowest position
-                of life and still idk how liked that version....the lady luck who has brought happiness in my life🧿🧿 ....still cant forget
-                when i saw u face to face after getting close to you...how my heart melted🫠🫠🫠🫠..... that outfit of urs is still something
-                engraved in my mind without any photo ....the person who chose a dumbass like me in a Long distance Relationship...while having 
-                better options nearby..Chalo now go to the next pane wha bhi likhna h mujhee 😅😅</div>
+            <div class="my-message">Writing this message for the girl who means the most to me💖💖....who has seen me at the lowest position of life and still idk how liked that version....the lady luck who has brought happiness in my life🧿🧿 ....still cant forget when i saw u face to face after getting close to you...how my heart melted🫠🫠🫠🫠..... that outfit of urs is still something engraved in my mind without any photo ....the person who chose a dumbass like me in a Long distance Relationship...while having better options nearby..Chalo now go to the next pane wha bhi likhna h mujhee 😅😅</div>
         </div>
 
         <div class="section reverse">
@@ -52,9 +45,7 @@
                 <img src="aditi2.jpeg" alt="Memory 2">
                 <p style="text-align:center; font-style:italic;">Our Smiles</p>
             </div>
-            <div class="my-message">It has been 3 months of togethernesss💖💖....idk how but my ladyy u have successfully managed with this dumbass for more than 
-                90 days😅😅🫡🫡🫡.......but as you remember on 12th January,2026 Monday 4:43PM you signed up a permanent lifetime bond with me....and as
-                i believe the misunderstanding ,the sadness,and the anger would be temperoary...but us being together would be permanent.....</div>
+            <div class="my-message">It has been 3 months of togethernesss💖💖....idk how but my ladyy u have successfully managed with this dumbass for more than 90 days😅😅🫡🫡🫡.......but as you remember on 12th January, 2026 Monday 4:43PM you signed up a permanent lifetime bond with me....and as i believe the misunderstanding, the sadness, and the anger would be temporary...but us being together would be permanent.....</div>
         </div>
 
         <div class="section">
@@ -70,25 +61,47 @@
                 <img src="aditi5.jpeg" alt="Memory 4">
                 <p style="text-align:center; font-style:italic;">Our Future</p>
             </div>
-            <div class="my-message">From "My Favourite Sardardd" To "Rasgulla" to "Wifeyyyyy" i have called u with many nicknames just want the right to 
-                be with u long ahead so the variety and count on these nicknames to keep on increasing ......just promise me togetherness,promise me that
-                i will always belong to you,and I promise you to be For u ,By you and Besides you in each and every situation and each and every aspect of
-                life, ik i have not turned out to be the best boyfriend ,in fact i doubt to clear the cutoff of a good boyfriend too,but dw love i am learning
-                ..teach me how to love you and  i promise to exactly mold myself into the ways u want me too...Always yours forver and ever💖🧿🧿🧿🧿🧿</div>
+            <div class="my-message">From "My Favourite Sardardd" To "Rasgulla" to "Wifeyyyyy" i have called u with many nicknames just want the right to be with u long ahead so the variety and count on these nicknames to keep on increasing ......just promise me togetherness, promise me that i will always belong to you, and I promise you to be For u, By you and Besides you in each and every situation and each and every aspect of life, ik i have not turned out to be the best boyfriend, in fact i doubt to clear the cutoff of a good boyfriend too, but dw love i am learning ..teach me how to love you and i promise to exactly mold myself into the ways u want me too...Always yours forever and ever💖🧿🧿🧿🧿🧿</div>
         </div>
 
         <div class="aditi-panel" id="inputPanel">
             <h2>Your turn Cupcake🧁❤️</h2>
-            <textarea id="aditiTextarea" placeholder="Write to me..."></textarea>
-            <button class="btn-submit" onclick="sendResponse()">Send to your Hubby</button>
+            <p>"Aap hi btaa do madam ji aapko khush kese rkhaa jaaye ...aapka Hubby thoda gadha hai😅😅."</p>
+            <form id="contact-form" action="https://formspree.io/f/xqegazak" method="POST">
+                <textarea name="message" id="aditiTextarea" placeholder="Write to me, Wifeyyyyy... I am listening.."></textarea>
+                <button type="submit" class="btn-submit">Send this dumboo some tips!</button>
+            </form>
         </div>
     </div>
 
     <script>
+        // Scroll Animation logic
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.section').forEach(s => observer.observe(s));
+
+        // Formspree logic
+        const form = document.getElementById('contact-form');
+        form.onsubmit = async (e) => {
+            e.preventDefault();
+            const submitBtn = form.querySelector('.btn-submit');
+            submitBtn.innerText = "Sending...";
+            
+            const data = new FormData(form);
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+            
+            if (response.ok) {
+                document.getElementById('inputPanel').innerHTML = "<div style='padding:40px;'><h2>Message Sent! ❤️</h2><p>I'll read it soon, Wifeyyyyy!</p></div>";
+            } else {
+                alert("Oops! There was a problem. Try again?");
+                submitBtn.innerText = "Send this dumboo some tips!";
+            }
+        };
     </script>
 </body>
 </html>
